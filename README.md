@@ -67,7 +67,7 @@ covid19-data-analysis/
 
 ## Dashboard Preview
 
-![Dashboard Screenshot]([visualizations/dashboard_screenshot.png](https://github.com/SagarParmar101/COVID-19-Data-Analysis-Visualization-Project/blob/main/Covid19_DashboardScreenshot.PNG?raw=true))
+![Dashboard Screenshot](https://github.com/SagarParmar101/COVID-19-Data-Analysis-Visualization-Project/blob/dd8c0a32e203a8f92d925ac1162893c7b5676266/Covid19_DashboardScreenshot.PNG)
 
 ## Technologies Used
 
