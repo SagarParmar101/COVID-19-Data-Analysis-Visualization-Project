@@ -9,7 +9,6 @@
 - [Dashboard Preview](#dashboard-preview)
 - [Technologies Used](#technologies-used)
 - [Acknowledgments](#acknowledgments)
-- [License](#license)
 
 ## Overview
 A comprehensive analysis of the global COVID-19 pandemic using **Python**, **SQL**, and **Power BI**.  
@@ -27,10 +26,10 @@ covid19-data-analysis/
 │ ├── raw_data/
 │ ├── processed_data/
 ├── scripts/
-│ ├── data_processing.py
-│ ├── sql_queries.sql
+│ ├── Covid_19_PythonScript.py("data_processing")
+│ ├── Covid_19_SqlScript.sql("sql_queries")
 ├── visualizations/
-│ ├── covid_dashboard.pbix
+│ ├── Covid_19_Dashboard.pbix
 │ ├── dashboard_screenshot.png
 ├── README.md
 ├── requirements.txt
@@ -42,8 +41,8 @@ covid19-data-analysis/
 
 1. **Clone the repository:**
     ```
-    git clone https://github.com/[yourusername]/covid19-data-analysis.git
-    cd covid19-data-analysis
+    git clone https://github.com/[SagarParmar101]/COVID-19-Data-Analysis-Visualization-Project.git
+    cd COVID-19-Data-Analysis-Visualization-Project
     ```
 
 2. **Install Python requirements:**
@@ -52,10 +51,10 @@ covid19-data-analysis/
     ```
 3. **Run data processing script:**
     ```
-    python scripts/data_processing.py
+    python scripts/Covid_19_PythonScript.py
     ```
-4. **Run database setup & key SQL queries** using `scripts/sql_queries.sql`.
-5. **Open `covid_dashboard.pbix` in Power BI Desktop** for full dashboard interactivity.
+4. **Run database setup & key SQL queries** using `scripts/Covid_19_SqlScript.sql`.
+5. **Open `Covid_19_Dashboard.pbix` in Power BI Desktop** for full dashboard interactivity.
 
 ## Key Findings
 
@@ -67,19 +66,17 @@ covid19-data-analysis/
 
 ## Dashboard Preview
 
-![Dashboard Screenshot](https://github.com/SagarParmar101/COVID-19-Data-Analysis-Visualization-Project/blob/dd8c0a32e203a8f92d925ac1162893c7b5676266/Covid19_DashboardScreenshot.PNG)
+![Dashboard Screenshot](https://github.com/SagarParmar101/COVID-19-Data-Analysis-Visualization-Project/blob/13abbe340614bda62bc7c11d2fd2f5c9616447fe/Covid19_DashboardScreenshot.PNG)
 
 ## Technologies Used
 
-- Python 3 (`pandas`, `numpy`, `matplotlib`)
+- PyCharm (`pandas`, `numpy`, `matplotlib`)
 - SQL (MySQL/SQLite analytics)
 - Power BI (visualizations, DAX)
-- Jupyter Notebook (optional for EDA)
 - Git/GitHub (version control & collaboration)
 
 ## Acknowledgments
 
 - [Johns Hopkins University CSSE COVID-19 Data](https://github.com/CSSEGISandData/COVID-19), [license](https://github.com/CSSEGISandData/COVID-19/blob/master/LICENSE)
-- Power BI dashboard inspiration: [JHU dashboard](https://coronavirus.jhu.edu/map.html), [PowerBI community](https://community.powerbi.com/)
 - See `project_report.md` for additional references and insights.
 
