@@ -80,3 +80,10 @@ covid19-data-analysis/
 - [Johns Hopkins University CSSE COVID-19 Data](https://github.com/CSSEGISandData/COVID-19), [license](https://github.com/CSSEGISandData/COVID-19/blob/master/LICENSE)
 - See `project_report.md` for additional references and insights.
 
+## 📧 Contact
+
+Connect with me for questions about this project or collaboration opportunities:
+- **LinkedIn**: [www.linkedin.com/in/sagar-parmar2025]
+- **Portfolio**: [https://sagarparmar101.github.io/]
+
+---
