@@ -4,8 +4,8 @@ End-to-end analysis of reported COVID-19 cases and deaths in 197 countries (22 J
 
 **[Open the live dashboard](https://datastudio.google.com/reporting/55d33dd0-ae73-47d7-9ee3-1f4ecbe86015)** · [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/SagarParmar101/COVID-19-Data-Analysis-Visualization-Project/blob/main/covid_analysis.ipynb)
 
-![Dashboard page 1](images/dashboard_page1.png)
-![Dashboard page 2](images/dashboard_page2.png)
+![Dashboard page 1](Images/dashboard_page1.png)
+![Dashboard page 2](Images/dashboard_page2.png)
 
 ## Key findings
 - The world total is 676.6 million reported cases and 6.88 million deaths (fatality rate 1.02%).
