@@ -1,89 +1,46 @@
-# COVID-19 Data Analysis & Visualization Project
+# COVID-19 Global Data Analysis
 
-## Table of Contents
-- [Overview](#overview)
-- [Data Sources](#data-sources)
-- [Project Structure](#project-structure)
-- [How to Run](#how-to-run)
-- [Key Findings](#key-findings)
-- [Dashboard Preview](#dashboard-preview)
-- [Technologies Used](#technologies-used)
-- [Acknowledgments](#acknowledgments)
+End-to-end analysis of reported COVID-19 cases and deaths in 197 countries (22 Jan 2020 – 9 Mar 2023): a Python data pipeline, SQL analysis in DuckDB, and an interactive Looker Studio dashboard.
 
-## Overview
-A comprehensive analysis of the global COVID-19 pandemic using **Python**, **SQL**, and **Power BI**.  
-This project demonstrates sourcing, cleaning, transformation, KPI creation, database integration, and dashboard visualization. Suitable for portfolio or professional analytics applications.
+**[Open the live dashboard](https://datastudio.google.com/reporting/55d33dd0-ae73-47d7-9ee3-1f4ecbe86015)** · [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/SagarParmar101/COVID-19-Data-Analysis-Visualization-Project/blob/main/covid_analysis.ipynb)
 
-## Data Sources
-- [Johns Hopkins University CSSE COVID-19 Data Repository](https://github.com/CSSEGISandData/COVID-19)
-  - [Global Confirmed Cases CSV](https://github.com/CSSEGISandData/COVID-19/tree/master/csse_covid_19_data/csse_covid_19_time_series)
-  - [Global Deaths CSV](https://github.com/CSSEGISandData/COVID-19/tree/master/csse_covid_19_data/csse_covid_19_time_series)
+![Dashboard page 1](images/dashboard_page1.png)
+![Dashboard page 2](images/dashboard_page2.png)
 
-## Project Structure
-````
-covid19-data-analysis/
-├── data/
-│ ├── raw_data/
-│ ├── processed_data/
-├── scripts/
-│ ├── Covid_19_PythonScript.py("data_processing")
-│ ├── Covid_19_SqlScript.sql("sql_queries")
-├── visualizations/
-│ ├── Covid_19_Dashboard.pbix
-│ ├── dashboard_screenshot.png
+## Key findings
+- The world total is 676.6 million reported cases and 6.88 million deaths (fatality rate 1.02%).
+- The US had 15.3% of all cases. The top 3 countries by total cases (US, India, France) had 27.8% together.
+- Rankings change a lot per million people (countries with 1M+ people). The US is 1st by total cases but 28th per million, and India is 2nd but 94th. Austria, Slovenia and France are highest per million.
+- January 2022 (Omicron) was the worst month for 74 of 197 countries. January to March 2022 covers about 60% of countries.
+- The fatality rate (deaths ÷ cases in the year) fell from 2.27% in 2020 to 1.74% in 2021 and 0.33% in 2022.
+
+## How it was built
+1. **Python (pandas):** download the JHU time series, add provinces up to country level, remove 4 non-country entries (2 cruise ships, 2 Olympic Games), add population from JHU's lookup table, then calculate new cases and deaths, 7-day averages, fatality rate and per-million figures.
+2. **Checks:** world totals match JHU's final figures. The 7-day average calculated in SQL differs from the Python one by at most 0.004.
+3. **SQL (DuckDB):** 7 queries using CTEs, window functions, RANK and ROW_NUMBER (`sql/covid_queries.sql`).
+4. **Dashboard (Looker Studio):** 2 pages. Totals come from a one-row-per-country table, and charts over time come from the daily table.
+
+## Repository
+```
 ├── README.md
+├── covid_analysis.ipynb      Python pipeline and SQL run
 ├── requirements.txt
-└── project_report.md
-```````
+├── sql/covid_queries.sql     7 queries
+├── data/raw/                 original JHU files
+├── data/processed/           daily and summary tables
+└── images/                   dashboard screenshots
+```
 
+## How to run
+Click the Colab badge, then choose Runtime → Run all. The notebook downloads the JHU files, builds the two tables in `data/processed/`, and runs the SQL file with DuckDB. The JHU repository is archived, so the data will not change.
 
-## How to Run
+## Limits
+- These are reported cases. They depend on how much each country tested, so countries are not directly comparable.
+- The fatality rate here is deaths ÷ cases in the same period, not the true infection fatality rate. Testing was low in early 2020, which inflates 2020.
+- 2023 covers only 1 Jan to 9 Mar. JHU stopped updating on 9 Mar 2023.
+- Daily new cases are set to 0 when JHU corrected a total downward, so yearly sums are about 0.1% above the final total.
+- Antarctica has no population, so it has no per-million values.
 
-1. **Clone the repository:**
-    ```
-    git clone https://github.com/[SagarParmar101]/COVID-19-Data-Analysis-Visualization-Project.git
-    cd COVID-19-Data-Analysis-Visualization-Project
-    ```
-
-2. **Install Python requirements:**
-    ```
-    pip install -r requirements.txt
-    ```
-3. **Run data processing script:**
-    ```
-    python scripts/Covid_19_PythonScript.py
-    ```
-4. **Run database setup & key SQL queries** using `scripts/Covid_19_SqlScript.sql`.
-5. **Open `Covid_19_Dashboard.pbix` in Power BI Desktop** for full dashboard interactivity.
-
-## Key Findings
-
-- The US and India had the highest cumulative confirmed cases.
-- Case Fatality Rate (CFR) dropped significantly as the pandemic evolved.
-- Major case/death peaks were visually identified by year and region.
-- 7-day rolling averages and growth rates revealed temporal and geographic trends.
-- Interactive dashboard enables country/time filtering and rapid benchmarking.
-
-## Dashboard Preview
-
-![Covid_19_Dashboard](https://github.com/user-attachments/assets/cc91002f-dabf-49b4-9dc5-48983bc6d46d)
-
-## Technologies Used
-
-- PyCharm (`pandas`, `numpy`, `matplotlib`)
-- SQL (MySQL/SQLite analytics)
-- Power BI (visualizations, DAX)
-- Git/GitHub (version control & collaboration)
-
-## Acknowledgments
-
-- [Johns Hopkins University CSSE COVID-19 Data](https://github.com/CSSEGISandData/COVID-19), [license](https://github.com/CSSEGISandData/COVID-19/blob/master/LICENSE)
-- See `project_report.md` for additional references and insights.
-
-## 📧 Contact
-
-Connect with me for questions about this project or collaboration opportunities:
-- **LinkedIn**: [www.linkedin.com/in/sagar-parmar2025]
-- **Portfolio**: [https://sagarparmar101.github.io/]
-
----
+## Contact
+- LinkedIn: [linkedin.com/in/sagar-parmar2025](https://www.linkedin.com/in/sagar-parmar2025)
+- Portfolio: [sagarparmar.pages.dev](https://sagarparmar.pages.dev/)
