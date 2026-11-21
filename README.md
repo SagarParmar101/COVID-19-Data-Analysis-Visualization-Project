@@ -2,7 +2,7 @@
 
 End-to-end analysis of reported COVID-19 cases and deaths in 197 countries (22 Jan 2020 – 9 Mar 2023): a Python data pipeline, SQL analysis in DuckDB, and an interactive Looker Studio dashboard.
 
-**[Open the live dashboard](https://datastudio.google.com/reporting/55d33dd0-ae73-47d7-9ee3-1f4ecbe86015)** · [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/SagarParmar101/COVID-19-Data-Analysis-Visualization-Project/blob/main/covid_analysis.ipynb)
+**[Open the live dashboard](https://datastudio.google.com/reporting/55d33dd0-ae73-47d7-9ee3-1f4ecbe86015)** · [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1Gpd0_K_zsVm_bfJyp-Vm_nLamVWbUD4k?usp=sharing)
 
 ![Dashboard page 1](Images/dashboard_page1.png)
 ![Dashboard page 2](Images/dashboard_page2.png)
